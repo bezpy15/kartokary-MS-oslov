@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Pyramid Card Game&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #2e7d32;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #1565c0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.disabled {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#message {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#newGameBtn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* ======================</p>
+<p class="p1"><span class="Apple-converted-space">       </span>BANNER STYLES</p>
+<p class="p1"><span class="Apple-converted-space">       </span>====================== */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.banner {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ffeb3b;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 6px rgba(0,0,0,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- banner placeholder --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="banner" class="banner" style="display:none;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Pyramid Card Game&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="gameBoard"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="message"&gt;Select a card from row 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="newGameBtn"&gt;New Game&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// === new: list of failure messages ===</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const failureMessages = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Takhle se jezdilo naposled v 96'",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Oldschool cenim, ale dneska už to nefunguje.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Tudy? To jsi hodně bláhovej!",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Ale ale, tudy to nepůjde....",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Mission failed, we'll get them next time.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Poslední, kdo to tudy zvládl, byl legendární Peter Ludwig.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Proč tudy? Neprobádaný a nesmyslný!",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Kdybys šel radši doprava, tam to bylo ložený.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Podceněná příprava zkušeného závodníka...",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Takovou chybu jsme viděli naposledy v památném finále na MS v Ottawě, nepochopitelné.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"To bylo přece jasný...",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Slyšíš to...? To se karta neobrací.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Nepochopitelná chyba, ale to dnes bohužel není poprvé.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"No a co si čekal?"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// === new: helper to show/hide banner ===</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showBanner(text, duration = 3000) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const b = document.getElementById('banner');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>b.innerText = text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>b.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearTimeout(b._hideTimer);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>b._hideTimer = setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>b.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}, duration);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Define standard deck suits and ranks.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const suits = ['♠', '♥', '♦', '♣'];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let pyramid = []; <span class="Apple-converted-space">        </span>// Will hold the cards arranged by row.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let currentLine = 0;<span class="Apple-converted-space">      </span>// Which row is active (0-indexed; row 0 = first row).</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Create a full deck of 52 cards.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function createDeck() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let deck = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let suit of suits) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let rank of ranks) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>deck.push({ rank: rank, suit: suit });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return deck;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Shuffle the deck using the Fisher-Yates algorithm.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function shuffle(array) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let i = array.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>[array[i], array[j]] = [array[j], array[i]];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return array;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Initialize the game: build a new pyramid using 15 cards.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function initializeGame() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentLine = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pyramid = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const deck = shuffle(createDeck());</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let index = 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// The pyramid: row 0 has 5 cards, row 1 has 4, row 2 has 3, row 3 has 2, row 4 has 1 card.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (let row = 0; row &lt; 5; row++) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let rowCards = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let cardsInRow = 5 - row;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; cardsInRow; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rowCards.push(deck[index]);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>index++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pyramid.push(rowCards);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderBoard();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Render the pyramid board.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderBoard() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const gameBoard = document.getElementById('gameBoard');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gameBoard.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pyramid.forEach((rowCards, rowIndex) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rowDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rowDiv.className = 'row';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rowCards.forEach((card, cardIndex) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const cardDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardDiv.className = 'card';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Add data attributes to indicate which row and position the card occupies.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardDiv.dataset.row = rowIndex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardDiv.dataset.index = cardIndex;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardDiv.dataset.flipped = 'false';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>// Initially display a card back symbol.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardDiv.innerText = '❓';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cardDiv.addEventListener('click', onCardClick);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rowDiv.appendChild(cardDiv);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>gameBoard.appendChild(rowDiv);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>updateMessage();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Update the message display.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateMessage(msg) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const messageDiv = document.getElementById('message');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (msg) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.innerText = msg;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.innerText = `Select a card from row ${currentLine + 1}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Called when a card is clicked.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function onCardClick(event) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const cardDiv = event.currentTarget;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const row = parseInt(cardDiv.dataset.row);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const flipped = (cardDiv.dataset.flipped === 'true');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Only allow a click if the card has not been flipped and it's in the active row.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (flipped) return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (row !== currentLine) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateMessage(`Please select a card from row ${currentLine + 1}`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const cardIndex = parseInt(cardDiv.dataset.index);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const card = pyramid[row][cardIndex];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// "Flip" the card: reveal its rank and suit.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cardDiv.innerText = card.rank + card.suit;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cardDiv.dataset.flipped = 'true';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cardDiv.classList.add('disabled');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// If the card is a losing card (Ace, J, Q or K), then restart with a banner.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (['A', 'J', 'Q', 'K'].includes(card.rank)) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const msg = failureMessages[</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Math.floor(Math.random() * failureMessages.length)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>showBanner(msg, 4000);<span class="Apple-converted-space">                </span>// show failure banner for 4 seconds</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateMessage(`You flipped ${card.rank}. Restarting…`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>initializeGame();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Otherwise, proceed to the next row.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>currentLine++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (currentLine &gt;= pyramid.length) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>updateMessage('Congratulations! You win!');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initializeGame();</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>updateMessage();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Hook up the New Game button.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('newGameBtn').addEventListener('click', initializeGame);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Start the game when the page loads, but first show the welcome banner.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.onload = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showBanner(</p>
+<p class="p1"><span class="Apple-converted-space">        </span>"Vítejte na MS v kartokárách v Oslově, v rámci half-time show bu</p>
+</body>
+</html>
