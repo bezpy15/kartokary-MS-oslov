@@ -1,2 +1,2 @@
-# kartokary-MS-oslov
+# kartokary-MS-Oslov
 Specialni edice
